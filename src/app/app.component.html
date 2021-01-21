@@ -8,7 +8,7 @@
           <div class="navbar-nav">
           <a routerLink="/login" class="nav-item nav-link" routerLinkActive="active">Login</a>
           <a routerLink="/cursos" class="nav-item nav-link" routerLinkActive="active" [queryParams]="{pagina:1}">Cursos</a>
-          <a [routerLink]="['curso', idCurso.value]" class="nav-item nav-link" routerLinkActive="active">Curso com id</a>
+          <!--a [routerLink]="['curso', idCurso.value]" class="nav-item nav-link" routerLinkActive="active">Curso com id</a-->
           <a routerLink="/alunos" class="nav-item nav-link" routerLinkActive="active">Alunos</a>
           </div>
       </div>
@@ -17,11 +17,6 @@
 
 <div class="container">
   <br>
-  <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <span class="input-group-text" id="basic-addon1">Digite o ID do curso</span>
-    </div>
-    <input #idCurso type="text" class="form-control" (keyup)="0">
-  </div>
+  
   <router-outlet></router-outlet>
 </div>
