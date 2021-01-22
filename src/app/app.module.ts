@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { AuthGuard } from './guards/auth.guard';
 import { CursoGuard } from './guards/cursos.guard';
 import { AlunosGuard } from './guards/alunos.guard';
+import { AlunosDeactivateGuard } from './guards/alunos-deactivate.guard';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AlunosGuard } from './guards/alunos.guard';
     AuthService, 
     AuthGuard, 
     CursoGuard,
-    AlunosGuard
+    AlunosGuard,
+    AlunosDeactivateGuard
   ],
   bootstrap: [AppComponent]
 })
