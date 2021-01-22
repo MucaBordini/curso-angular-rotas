@@ -7,12 +7,15 @@ import { AlunoDetalheComponent } from './aluno-detalhe/aluno-detalhe.component';
 import { AlunoFormComponent } from './aluno-form/aluno-form.component';
 import { AlunoNaoEncontradoComponent } from './aluno-nao-encontrado/aluno-nao-encontrado.component';
 import { AlunosComponent } from './alunos.component';
+import { AlunoDetalheResolver } from './guards/aluno-detalhe.resolver';
 
 
 const alunosRoutes: Routes = [
   { path: '', component: AlunosComponent, children: [
     { path: 'novo', component: AlunoFormComponent},
-    { path: ':id', component: AlunoDetalheComponent},
+    { path: ':id', component: AlunoDetalheComponent,
+      resolve: { aluno : AlunoDetalheResolver}
+    },
     { path: ':id/edit', component: AlunoFormComponent, canDeactivate: [AlunosDeactivateGuard]},
     { path: 'notFound', component: AlunoNaoEncontradoComponent },
   ]},

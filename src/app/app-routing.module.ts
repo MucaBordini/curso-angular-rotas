@@ -13,12 +13,14 @@ const appRoutes: Routes = [
   {path: 'cursos',  
     loadChildren: () => import('./cursos/cursos.module').then(m => m.CursosModule),
     canActivate: [AuthGuard],
-    canActivateChild: [CursoGuard]
+    canActivateChild: [CursoGuard],
+    canLoad: [AuthGuard]
   },
   {path: 'alunos', 
     loadChildren: () => import('./alunos/alunos.module').then(m => m.AlunosModule),
     canActivate: [AuthGuard],
-    canActivateChild: [AlunosGuard]
+    canActivateChild: [AlunosGuard],
+    canLoad: [AuthGuard]
   },
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
